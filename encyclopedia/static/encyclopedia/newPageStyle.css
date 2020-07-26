@@ -1,0 +1,11 @@
+.content,.title,.htmlContent{
+    margin-left:10px;
+    outline:none;
+}
+.title{
+    width:900px;
+}
+.submitButton{
+    margin-top:10px;
+    margin-left:845px;
+}

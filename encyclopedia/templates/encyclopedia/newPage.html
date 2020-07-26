@@ -1,0 +1,23 @@
+{% extends "encyclopedia/layout.html" %}
+{% load static %}
+
+{% block head%}
+    <link href="{% static 'encyclopedia/newPageStyle.css' %}" rel="stylesheet">
+{% endblock %}
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+   <form action={%url 'saveFile' %} method="POST">
+        {% csrf_token %}
+        <div class="content">File name </div> 
+        <input class="title" type="text" name="title"/>
+    
+        <div class="content"> Contents</div>
+         <textarea rows="20" cols="125" class="htmlContent" name="markdownText"></textarea>
+        
+        <div> <input class="submitButton" type="submit" /> </div>
+   </form>
+
+{% endblock %}

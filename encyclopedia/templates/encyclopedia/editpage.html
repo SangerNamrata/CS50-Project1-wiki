@@ -1,0 +1,20 @@
+{% extends "encyclopedia/layout.html" %}
+{% load static %}
+
+{% block head%}
+    <link href="{% static 'encyclopedia/newPageStyle.css' %}" rel="stylesheet">
+{% endblock %}
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+   <form  action={%url 'modifiedContent' %} method="POST">
+        {% csrf_token %}  
+        <div class="content"> Contents</div>
+         <textarea rows="20" cols="125" class="htmlContent" name="markdownText">{{ pageContent }}</textarea>
+        
+        <div> <input class="submitButton" type="submit" value="Save" /> </div>
+   </form>
+
+{% endblock %}
